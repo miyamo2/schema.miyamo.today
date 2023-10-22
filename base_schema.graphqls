@@ -1,0 +1,33 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+scalar DateTime
+scalar Upload
+directive @isAuthenticated on FIELD_DEFINITION
+
+interface Node {
+  id: ID!
+}
+
+type PageInfo {
+  hasNextPage: Boolean
+  hasPreviousPage: Boolean
+  startCursor: String!
+  endCursor: String!
+}
+
+input NoopInput {
+  clientMutationId: String
+}
+
+type NoopPayload {
+  clientMutationId: String
+}
+
+type Query {
+  node(id: ID!): Node
+}
+
+type Mutation {
+  noop(input: NoopInput): NoopPayload
+}

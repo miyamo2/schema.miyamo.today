@@ -1,0 +1,77 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+type PostNode implements Node {
+  id: ID!
+  title: String!
+  content: String!
+  thumbnailUrl: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  tags(
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): PostTagConnection!
+}
+
+type PostTagNode {
+  id: ID!
+  name: String!
+  postCount: Int!
+}
+
+type PostTagEdge {
+  cursor: String!
+  node: PostTagNode!
+}
+
+type PostTagConnection {
+  edges: [PostTagEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type PostEdge {
+  cursor: String!
+  node: PostNode!
+}
+
+type PostConnection {
+  edges: [PostEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+input NewPostInput {
+  title: String!
+  content: String!
+  tag: [String!]!
+  thumbnail: Upload
+}
+
+input ModPostInput {
+  id: ID!
+  title: String!
+  content: String!
+  tag: [String!]!
+  thumbnail: Upload
+}
+
+type PostPayload {
+  clientMutationId: String
+  post: PostNode
+}
+
+extend type Query {
+  posts(first: Int, last: Int, after: String, before: String): PostConnection!
+  post(id: ID!): PostNode
+}
+
+extend type Mutation {
+  publishPost(input: NewPostInput!): PostPayload @isAuthenticated
+  modifyPost(input: ModPostInput!): PostPayload @isAuthenticated
+  deletePost(id: ID!): PostPayload @isAuthenticated
+}
+
