@@ -1,0 +1,51 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+type TagNode {
+  id: ID!
+  name: String!
+  postCount: Int!
+  posts(
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): TagPostConnection!
+}
+
+type TagPostNode implements Node {
+  id: ID!
+  title: String!
+  content: String!
+  thumbnailUrl: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type TagPostEdge {
+  cursor: String!
+  node: TagPostNode!
+}
+
+type TagPostConnection {
+  edges: [TagPostEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type TagEdge {
+  cursor: String!
+  node: TagNode!
+}
+
+type TagConnection {
+  edges: [TagEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+extend type Query {
+  tags(first: Int, last: Int, after: String, before: String): TagConnection!
+  tag(id: ID!): TagNode
+}
+
