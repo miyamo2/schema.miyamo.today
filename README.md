@@ -20,32 +20,32 @@ git submodule add https://github.com/miyamo2/blogschema
 
 1. Initialize your repo & go module
 
-    ```sh
-    mkdir myblog
-    cd ./myblog
-    git init
-    git submodule add https://github.com/miyamo2/  blogschema
-    go mod init myblog
-    ```
+```sh
+mkdir myblog
+cd ./myblog
+git init
+git submodule add https://github.com/miyamo2/  blogschema
+go mod init myblog
+```
 
 2. Setup gqlgen
 
-    ```sh
-    go install github.com/99designs/gqlgen@latest
-    gqlgen init
-    go mod tidy
-    ```
+```sh
+go install github.com/99designs/gqlgen@latest
+gqlgen init
+go mod tidy
+```
 
 3. Edit gqlgen.yml
 
-    ```diff
-    schema:
-      - - graph/*.graphqls
-      + - blogschema/*.graphqls
-    ```
+```diff
+schema:
+    - - graph/*.graphqls
+    + - blogschema/*.graphqls
+```
 
 4. Generate skelton with blogschema
 
-    ```.sh
-    gqlgen generate
-    ```
+```.sh
+gqlgen generate
+```
