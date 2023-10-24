@@ -1,5 +1,7 @@
 # blogschema
 
+[![GitHub](https://img.shields.io/github/license/miyamo2/blogschema)](https://img.shields.io/github/license/miyamo2/blogschema)
+
 GraphQL Schema for simply blog application.
 
 ## Installation
