@@ -4,6 +4,8 @@
 
 GraphQL Schema for simply blog application.
 
+This schema is implemented following the [Relay GraphQL cursor connection specification](https://relay.dev/graphql/connections.htm).
+
 ## Installation
 
 ```sh
