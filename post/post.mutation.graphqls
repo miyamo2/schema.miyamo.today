@@ -1,0 +1,5 @@
+extend type Mutation {
+  publishPost(input: NewPostInput!): PostPayload @isAuthenticated
+  modifyPost(input: ModPostInput!): PostPayload @isAuthenticated
+  deletePost(id: ID!): PostPayload @isAuthenticated
+}

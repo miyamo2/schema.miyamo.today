@@ -1,6 +1,3 @@
-# GraphQL schema example
-#
-# https://gqlgen.com/getting-started/
 type PostNode implements Node {
   id: ID!
   title: String!
@@ -62,16 +59,5 @@ input ModPostInput {
 type PostPayload {
   clientMutationId: String
   post: PostNode
-}
-
-extend type Query {
-  posts(first: Int, last: Int, after: String, before: String): PostConnection!
-  post(id: ID!): PostNode
-}
-
-extend type Mutation {
-  publishPost(input: NewPostInput!): PostPayload @isAuthenticated
-  modifyPost(input: ModPostInput!): PostPayload @isAuthenticated
-  deletePost(id: ID!): PostPayload @isAuthenticated
 }
 
