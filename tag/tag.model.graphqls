@@ -1,6 +1,3 @@
-# GraphQL schema example
-#
-# https://gqlgen.com/getting-started/
 type TagNode {
   id: ID!
   name: String!
@@ -44,8 +41,4 @@ type TagConnection {
   totalCount: Int!
 }
 
-extend type Query {
-  tags(first: Int, last: Int, after: String, before: String): TagConnection!
-  tag(id: ID!): TagNode
-}
 

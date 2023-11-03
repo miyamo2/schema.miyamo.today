@@ -28,7 +28,7 @@ git submodule add https://github.com/miyamo2/blogschema
 mkdir myblog
 cd ./myblog
 git init
-git submodule add https://github.com/miyamo2/  blogschema
+git submodule add https://github.com/miyamo2/ blogschema
 go mod init myblog
 ```
 
@@ -45,7 +45,7 @@ go mod tidy
 ```diff
 schema:
     - - graph/*.graphqls
-    + - blogschema/*.graphqls
+    + - blogschema/**/*.graphqls
 ```
 
 4. Generate skelton with blogschema
