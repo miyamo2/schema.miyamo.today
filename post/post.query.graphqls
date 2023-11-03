@@ -1,0 +1,4 @@
+extend type Query {
+  posts(first: Int, last: Int, after: String, before: String): PostConnection!
+  post(id: ID!): PostNode
+}

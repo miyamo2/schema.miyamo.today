@@ -1,0 +1,4 @@
+extend type Query {
+  tags(first: Int, last: Int, after: String, before: String): TagConnection!
+  tag(id: ID!): TagNode
+}
