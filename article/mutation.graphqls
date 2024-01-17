@@ -1,0 +1,5 @@
+extend type Mutation {
+  publishArticle(input: NewArticleInput!): ArticlePayload @isAuthenticated
+  modifyArticle(input: ModArticleInput!): ArticlePayload @isAuthenticated
+  deleteArticle(id: ID!): ArticlePayload @isAuthenticated
+}

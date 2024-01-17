@@ -1,16 +1,16 @@
 type TagNode {
   id: ID!
   name: String!
-  postCount: Int!
-  posts(
+  articleCount: Int!
+  articles(
     after: String
     before: String
     first: Int
     last: Int
-  ): TagPostConnection!
+  ): TagArticleConnection!
 }
 
-type TagPostNode implements Node {
+type TagArticleNode implements Node {
   id: ID!
   title: String!
   content: String!
@@ -19,13 +19,13 @@ type TagPostNode implements Node {
   updatedAt: DateTime!
 }
 
-type TagPostEdge {
+type TagArticleEdge {
   cursor: String!
-  node: TagPostNode!
+  node: TagArticleNode!
 }
 
-type TagPostConnection {
-  edges: [TagPostEdge!]!
+type TagArticleConnection {
+  edges: [TagArticleEdge!]!
   pageInfo: PageInfo!
   totalCount: Int!
 }
