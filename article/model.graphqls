@@ -41,23 +41,4 @@ type ArticleConnection {
   totalCount: Int!
 }
 
-input NewArticleInput {
-  title: String!
-  content: String!
-  tag: [String!]!
-  thumbnail: Upload
-}
-
-input ModArticleInput {
-  id: ID!
-  title: String!
-  content: String!
-  tag: [String!]!
-  thumbnail: Upload
-}
-
-type ArticlePayload {
-  clientMutationId: String
-  article: ArticleNode
-}
 
