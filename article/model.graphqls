@@ -1,4 +1,4 @@
-type PostNode implements Node {
+type ArticleNode implements Node {
   id: ID!
   title: String!
   content: String!
@@ -10,45 +10,45 @@ type PostNode implements Node {
     before: String
     first: Int
     last: Int
-  ): PostTagConnection!
+  ): ArticleTagConnection!
 }
 
-type PostTagNode {
+type ArticleTagNode {
   id: ID!
   name: String!
-  postCount: Int!
+  articleCount: Int!
 }
 
-type PostTagEdge {
+type ArticleTagEdge {
   cursor: String!
-  node: PostTagNode!
+  node: ArticleTagNode!
 }
 
-type PostTagConnection {
-  edges: [PostTagEdge!]!
+type ArticleTagConnection {
+  edges: [ArticleTagEdge!]!
   pageInfo: PageInfo!
   totalCount: Int!
 }
 
-type PostEdge {
+type ArticleEdge {
   cursor: String!
-  node: PostNode!
+  node: ArticleNode!
 }
 
-type PostConnection {
-  edges: [PostEdge!]!
+type ArticleConnection {
+  edges: [ArticleEdge!]!
   pageInfo: PageInfo!
   totalCount: Int!
 }
 
-input NewPostInput {
+input NewArticleInput {
   title: String!
   content: String!
   tag: [String!]!
   thumbnail: Upload
 }
 
-input ModPostInput {
+input ModArticleInput {
   id: ID!
   title: String!
   content: String!
@@ -56,8 +56,8 @@ input ModPostInput {
   thumbnail: Upload
 }
 
-type PostPayload {
+type ArticlePayload {
   clientMutationId: String
-  post: PostNode
+  article: ArticleNode
 }
 

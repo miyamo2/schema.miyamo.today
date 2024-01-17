@@ -1,0 +1,4 @@
+extend type Query {
+  articles(first: Int, last: Int, after: String, before: String): ArticleConnection!
+  article(id: ID!): ArticleNode
+}
