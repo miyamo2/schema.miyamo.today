@@ -1,7 +1,6 @@
 type TagNode {
   id: ID!
   name: String!
-  articleCount: Int!
   articles(
     after: String
     before: String
