@@ -16,7 +16,6 @@ type ArticleNode implements Node {
 type ArticleTagNode {
   id: ID!
   name: String!
-  articleCount: Int!
 }
 
 type ArticleTagEdge {
