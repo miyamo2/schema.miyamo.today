@@ -9,7 +9,7 @@ type TagNode {
   ): TagArticleConnection!
 }
 
-type TagArticleNode implements Node {
+type TagArticleNode implements Node @derivedTypes {
   id: ID!
   title: String!
   thumbnailUrl: String!

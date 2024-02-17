@@ -1,4 +1,4 @@
-type ArticleNode implements Node {
+type ArticleNode implements Node @derivedTypes {
   id: ID!
   title: String!
   content: String!
