@@ -2,7 +2,7 @@ type ArticleNode implements Node {
   id: ID!
   title: String!
   content: String!
-  thumbnailUrl: String
+  thumbnailUrl: String!
   createdAt: DateTime!
   updatedAt: DateTime!
   tags(
