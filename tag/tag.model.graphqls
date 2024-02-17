@@ -12,7 +12,7 @@ type TagNode {
 type TagArticleNode implements Node {
   id: ID!
   title: String!
-  thumbnailUrl: String
+  thumbnailUrl: String!
   createdAt: DateTime!
   updatedAt: DateTime!
 }
