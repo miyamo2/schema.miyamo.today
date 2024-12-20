@@ -12,7 +12,7 @@ type TagNode {
 type TagArticleNode implements Node @derivedTypes {
   id: ID!
   title: String!
-  thumbnailUrl: String!
+  thumbnailUrl: URL!
   createdAt: DateTime!
   updatedAt: DateTime!
 }

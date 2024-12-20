@@ -2,7 +2,7 @@ type ArticleNode implements Node @derivedTypes {
   id: ID!
   title: String!
   content: Markdown!
-  thumbnailUrl: String!
+  thumbnailUrl: URL!
   createdAt: DateTime!
   updatedAt: DateTime!
   tags(
