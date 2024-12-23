@@ -1,4 +1,4 @@
-# blogschema
+# schema.miyamo.today
 
 [![GitHub](https://img.shields.io/github/license/miyamo2/blogschema)](https://img.shields.io/github/license/miyamo2/blogschema)
 
@@ -9,13 +9,13 @@ This schema is implemented following the [Relay GraphQL cursor connection specif
 ## Installation
 
 ```sh
-git clone https://github.com/miyamo2/blogschema
+git clone https://github.com/miyamo2/schema.miyamo.today
 ```
 
 as submodule
 
 ```sh
-git submodule add https://github.com/miyamo2/blogschema
+git submodule add https://github.com/miyamo2/schema.miyamo.today
 ```
 
 ## Usage
@@ -28,7 +28,7 @@ git submodule add https://github.com/miyamo2/blogschema
 mkdir myblog
 cd ./myblog
 git init
-git submodule add https://github.com/miyamo2/ blogschema
+git submodule add https://github.com/miyamo2/schema.miyamo.today blogschema
 go mod init myblog
 ```
 
