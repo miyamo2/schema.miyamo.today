@@ -1,0 +1,9 @@
+extend type Mutation {
+    createArticle(input: CreateArticleInput!): CreateArticlePayload!
+    updateArticleTitle(input: UpdateArticleTitleInput!): UpdateArticleTitlePayload!
+    updateArticleBody(input: UpdateArticleBodyInput!): UpdateArticleBodyPayload!
+    updateArticleThumbnail(input: UpdateArticleThumbnailInput!): UpdateArticleThumbnailPayload!
+    attachTags(input: AttachTagsInput!): AttachTagsPayload!
+    detachTags(input: DetachTagsInput!): DetachTagsPayload!
+    uploadImage(input: UploadImageInput!): UploadImagePayload!
+}

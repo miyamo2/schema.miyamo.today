@@ -1,0 +1,83 @@
+input CreateArticleInput {
+  title: String!
+  content: String!
+  thumbnailURL: URL!
+  tagNames: [String!]!
+  clientMutationId: String
+}
+
+type CreateArticlePayload {
+  articleId: ID!
+  eventID: ID!
+  clientMutationId: String
+}
+
+input UpdateArticleTitleInput {
+  articleId: ID!
+  title: String!
+  clientMutationId: String
+}
+
+type UpdateArticleTitlePayload {
+  articleId: ID!
+  eventID: ID!
+  clientMutationId: String
+}
+
+input UpdateArticleBodyInput {
+  articleId: ID!
+  content: String!
+  clientMutationId: String
+}
+
+type UpdateArticleBodyPayload {
+  articleId: ID!
+  eventID: ID!
+  clientMutationId: String
+}
+
+input UpdateArticleThumbnailInput {
+  articleId: ID!
+  thumbnailURL: URL!
+  clientMutationId: String
+}
+
+type UpdateArticleThumbnailPayload {
+  articleId: ID!
+  eventID: ID!
+  clientMutationId: String
+}
+
+input AttachTagsInput {
+  articleId: ID!
+  tagNames: [String!]!
+  clientMutationId: String
+}
+
+type AttachTagsPayload {
+  articleId: ID!
+  eventID: ID!
+  clientMutationId: String
+}
+
+input DetachTagsInput {
+  articleId: ID!
+  tagNames: [String!]!
+  clientMutationId: String
+}
+
+type DetachTagsPayload {
+  articleId: ID!
+  eventID: ID!
+  clientMutationId: String
+}
+
+input UploadImageInput {
+  image: Upload!
+  clientMutationId: String
+}
+
+type UploadImagePayload {
+  imageURL: URL!
+  clientMutationId: String
+}
